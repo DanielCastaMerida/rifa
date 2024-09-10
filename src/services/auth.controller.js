@@ -58,12 +58,6 @@ const updateSignup = async (req, res) => {
     return res.redirect('/dashboard');
 }
 
-const signin = true;
-
-const signinGoogle = true;
-
-const signinGoogleCallBack = true;
-
 
 const logout = async (req, res) => {
     req.logout();
@@ -89,4 +83,4 @@ const renderSignin = async (req, res) => {
     })
 }
 
-module.exports = { signup, updateSignup, signin, renderSignUp, renderSignin, signinGoogle, signinGoogleCallBack, logout };
+module.exports = { signup, updateSignup, renderSignUp, renderSignin, logout };

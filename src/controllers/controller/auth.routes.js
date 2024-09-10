@@ -8,12 +8,5 @@ router.post('/signup', [verifySignup.checkDuplicateUsernameOrEmail, verifySignup
 
 router.post('/update/signup', [verifySignup.checkDuplicateUsernameOrDocumento, verifySignup.checkRolesExisted, verifyValidation.validateUpdateNewUser], authController.updateSignup)
 
-router.get('/signin', [ authJwt.isAuthenticatedAuth ], authController.renderSignin)
-router.post('/signin', [verifyValidation.validateUser], authController.signin)
-
-
-router.get('/signin/google', [ authJwt.isAuthenticatedAuth ], authController.signinGoogle);
-router.get('/signin/google/callback', authController.signinGoogleCallBack);
-
 router.get("/logout",authController.logout)
 module.exports = router;
